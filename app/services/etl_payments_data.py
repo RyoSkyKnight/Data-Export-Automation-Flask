@@ -1,7 +1,7 @@
 import pandas as pd
 import logging
 import traceback
-from app.config.db_config import get_db_connection, DB_SOURCE, DB_TARGET
+from app.config.db_config import get_db_connection, DB_ALLINONE, DB_TARGET
 
 # **Fungsi untuk Membuat Tabel payment_cleaned Jika Belum Ada**
 def create_table_if_not_exists():
@@ -59,7 +59,7 @@ def etl_process():
             return {"error": "Gagal membuat tabel `payment_cleaned`"}, 500 
 
         logging.info("🔹 Mengambil data dari database sumber...")
-        conn_source = get_db_connection(DB_SOURCE)
+        conn_source = get_db_connection(DB_ALLINONE)
         if not conn_source:
             return {"error": "Koneksi ke database sumber gagal!"}, 500
 

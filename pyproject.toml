@@ -3,15 +3,20 @@ name = "my-flask-app"
 version = "0.1.0"
 description = "My Flask Application"
 authors = ["Your Name <your@email.com>"]
+packages = [{include = "packages"}]
 
 [tool.poetry.dependencies]
-python = ">=3.8,<3.12"  # Perbarui versi Python agar kompatibel dengan Flask 3.0.3
-flask = "3.0.3"
+python = ">=3.11,<3.13"  # Flask membutuhkan Python >=3.8, kita batasi hingga <3.12
+flask = "*"
 pandas = "*"
 pymysql = "*"
 python-dotenv = "*"
 apache-airflow = "*"
 apache-airflow-providers-mysql = "*"
-gunicorn = "22.0.0"
-werkzeug = "3.0.6"
+gunicorn = "*"
+werkzeug = "*"
 autopep8 = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

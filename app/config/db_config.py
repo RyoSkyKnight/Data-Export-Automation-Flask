@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ✅ Parse JSON dari .env
-DB_SOURCE = json.loads(os.getenv("DB_SOURCE", "{}"))
+DB_ALLINONE = json.loads(os.getenv("DB_ALLINONE", "{}"))
 DB_TARGET = json.loads(os.getenv("DB_TARGET", "{}"))
 
 def get_db_connection(db_config):
