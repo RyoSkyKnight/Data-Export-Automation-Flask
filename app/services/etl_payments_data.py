@@ -153,3 +153,20 @@ def etl_process():
         logging.error(f"❌ Error ETL: {str(e)}")
         logging.error(f"🔍 Stacktrace:\n{traceback.format_exc()}")
         return {"error": str(e), "message": "Gagal menjalankan ETL"}, 500
+
+def count_records():
+    """Menghitung jumlah total data di database target."""
+    conn_target = get_db_connection(DB_TARGET)  # ✅ FIXED
+    if conn_target is None:
+        logging.error("❌ Koneksi ke target gagal!")
+        return 0
+    
+    cursor_target = conn_target.cursor()
+    cursor_target.execute("SELECT COUNT(*) FROM payments_cleaned")
+    total_records = cursor_target.fetchone()[0]  # ✅ FIXED (fetchone() mengembalikan tuple)
+
+    print(f"✅ Total records in payments_cleaned: {total_records}")
+    logging.info(f"✅ Total records in payments_cleaned: {total_records}")
+
+    conn_target.close()
+    return total_records
