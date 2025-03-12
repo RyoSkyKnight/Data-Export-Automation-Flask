@@ -1,1 +1,48 @@
-/.env
+# Direktori virtual environment
+.venv/
+venv/
+env/
+
+# File konfigurasi environment
+.env
+.env.local
+.env.*.local
+
+# File dan folder yang dihasilkan oleh Poetry
+poetry.lock
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# File database SQLite (jika ada)
+*.sqlite3
+
+# Folder logs dan cache
+logs/
+*.log
+*.out
+*.err
+*.pid
+*.swp
+
+# Direktori sementara Python
+pip-wheel-metadata/
+poetry.lock
+
+# Direktori terkait Airflow
+airflow.cfg
+dags/__pycache__/
+dags/*.pyc
+dags/*.pyo
+
+# Konfigurasi IDE & Editor
+.vscode/
+.idea/
+*.iml
+
+# Direktori & file dari MacOS & Linux
+.DS_Store
+Thumbs.db
+*.swp
+*~
