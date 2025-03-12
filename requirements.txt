@@ -1,0 +1,10 @@
+pip
+autopep8
+Flask==3.0.3
+pandas
+pymysql
+python-dotenv
+apache-airflow
+apache-airflow-providers-mysql
+gunicorn==22.0.0
+Werkzeug==3.0.6

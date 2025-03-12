@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "my-flask-app"
+version = "0.1.0"
+description = "My Flask Application"
+authors = ["Your Name <your@email.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.12"  # Perbarui versi Python agar kompatibel dengan Flask 3.0.3
+flask = "3.0.3"
+pandas = "*"
+pymysql = "*"
+python-dotenv = "*"
+apache-airflow = "*"
+apache-airflow-providers-mysql = "*"
+gunicorn = "22.0.0"
+werkzeug = "3.0.6"
+autopep8 = "*"
